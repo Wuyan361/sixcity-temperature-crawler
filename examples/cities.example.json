@@ -1,0 +1,6 @@
+{
+  "cities": [
+    { "name": "广州", "latitude": 23.1291, "longitude": 113.2644 },
+    { "name": "汕头", "latitude": 23.3535, "longitude": 116.6822 }
+  ]
+}

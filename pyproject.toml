@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sixcity-temperature-crawler"
+version = "1.0.0"
+description = "六地气温爬虫：抓取海南、韶关、梅州、茂名、广州、深圳的历史与预报气温，导出带样式的 Excel。"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MPL-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "六地气温爬虫贡献者" }]
+keywords = ["weather", "open-meteo", "crawler", "excel", "climate", "temperature"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: Chinese (Simplified)",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+dependencies = [
+    "requests>=2.32,<3",
+    "pandas>=2.1",
+    "openpyxl>=3.1,<4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+sixcity-temp = "sixcity_temp.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Wuyan361/sixcity-temperature-crawler"
+Repository = "https://github.com/Wuyan361/sixcity-temperature-crawler"
+Issues = "https://github.com/Wuyan361/sixcity-temperature-crawler/issues"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RET", "PTH"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PTH"]
