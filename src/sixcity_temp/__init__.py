@@ -23,7 +23,7 @@ from .fetcher import (
 from .processor import build_apparent_table, build_temperature_table
 from .weather_codes import describe_weather_code
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 
 __all__ = [
     "DEFAULT_APPARENT_FILENAME",

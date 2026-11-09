@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sixcity-temperature-crawler"
-version = "1.0.0"
+version = "0.1.0"
 description = "六地气温爬虫：抓取海南、韶关、梅州、茂名、广州、深圳的历史与预报气温，导出带样式的 Excel。"
 readme = "README.md"
 requires-python = ">=3.11"

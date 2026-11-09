@@ -19,20 +19,48 @@ import zipfile
 from pathlib import Path
 
 TEXT_SUFFIXES = {
-    ".py", ".md", ".toml", ".txt", ".json", ".bat", ".cfg", ".ini", ".yml", ".yaml", ".sh"
+    ".py",
+    ".md",
+    ".toml",
+    ".txt",
+    ".json",
+    ".bat",
+    ".cfg",
+    ".ini",
+    ".yml",
+    ".yaml",
+    ".sh",
 }
 CACHE_DIRS = {"__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache", ".ipynb_checkpoints"}
 JUNK_SUFFIXES = {".pyc", ".pyo", ".tmp", ".bak", ".orig", ".log", ".swp", ".old", ".rej"}
 SENSITIVE_NAMES = {
-    ".env", ".npmrc", ".netrc", "id_rsa", "id_ed25519", "credentials", "credentials.json",
-    "secrets.json", "service-account.json",
+    ".env",
+    ".npmrc",
+    ".netrc",
+    "id_rsa",
+    "id_ed25519",
+    "credentials",
+    "credentials.json",
+    "secrets.json",
+    "service-account.json",
 }
 # 通用占位路径白名单：文档里用作示例，不算本机痕迹
 GENERIC_PATH_PREFIXES = ("d:\\output", "d:\\temp", "d:\\example", "./输出", "./output")
 
 SECRET_KEYWORDS = (
-    "password", "passwd", "pwd", "secret", "token", "api_key", "apikey", "access_key",
-    "client_secret", "private_key", "credential", "authorization", "bearer",
+    "password",
+    "passwd",
+    "pwd",
+    "secret",
+    "token",
+    "api_key",
+    "apikey",
+    "access_key",
+    "client_secret",
+    "private_key",
+    "credential",
+    "authorization",
+    "bearer",
 )
 SECRET_ASSIGN = re.compile(
     r"""(?i)\b(password|passwd|pwd|secret|token|api[_-]?key|access[_-]?key|client[_-]?secret)"""
